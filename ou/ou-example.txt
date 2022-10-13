@@ -1,0 +1,3 @@
+"OU=Oper1,OU=Computer,OU=Site 1,OU=Operations,DC=company,DC=br"
+"OU=Oper2,OU=Computer,OU=Site 2,OU=Operations,DC=company,DC=br"
+"OU=Oper3,OU=Computer,OU=Site 2,OU=Operations,DC=company,DC=br"
