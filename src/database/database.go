@@ -1,6 +1,7 @@
 package database
 
 import (
+	"laps/config"
 	"laps/src/models"
 	"log"
 
@@ -15,10 +16,10 @@ var (
 
 //Dbconnection inicia a conexão com o banco de dados.
 func Dbconnection() {
-	stringDeConexao := "laps:laps@1010@tcp(localhost:3306)/laps?charset=utf8&parseTime=True&loc=Local"
-	DB, err = gorm.Open(mysql.Open(stringDeConexao))
+
+	DB, err = gorm.Open(mysql.Open(config.StringBanco))
 	if err != nil {
-		log.Panic("erro ao conectar no db")
+		log.Panic("Erro ao conectar no banco de dados")
 	}
 	DB.AutoMigrate(&models.Ativo{})
 }
