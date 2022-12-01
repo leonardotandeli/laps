@@ -1,7 +1,7 @@
 package main
 
 import (
-	"laps/config"
+	"laps/src/config"
 	"laps/src/controllers"
 	"laps/src/database"
 
