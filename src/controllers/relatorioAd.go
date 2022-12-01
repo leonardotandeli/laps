@@ -12,8 +12,6 @@ func ADScan(OU string) string {
 
 	ps := "powershell.exe"
 	cm := "-command"
-	// importModule := "import-module"
-	// ad := " ActiveDirectory;"
 	getAd := "Get-ADComputer"
 	ds := "-Filter"
 	d1 := "*"
@@ -25,7 +23,7 @@ func ADScan(OU string) string {
 	arg3 := "Out-File"
 	file := "relatorio/ativos" + strconv.FormatInt(time.Now().UTC().UnixNano(), 10) + ".txt"
 
-	//executa o comando net user no cmd
+	//executa o comando no cmd
 	cmd := exec.Command(ps, cm, getAd, ds, d1, search, OU, select1, select2, arg1, arg2, select1, arg3, file)
 	//retorna os dados do cmd
 	cmdOut, err := cmd.Output()

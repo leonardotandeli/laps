@@ -9,6 +9,7 @@ import (
 	"time"
 )
 
+//CriaAtivoNoBanco armazena o hostname e senha no banco de dados
 func CriaAtivoNoBanco(fileDir string) {
 
 	f, err := os.Open(fileDir)
@@ -52,6 +53,7 @@ func CriaAtivoNoBanco(fileDir string) {
 
 }
 
+//ChecaSenha faz a verificação de senhas e só armazena uma nova senha se a senha atual for diferente da última senha armazenada
 func ChecaSenha(hostname string, senhaAtual string) {
 	var ativo models.Ativo
 	database.DB.Where("hostname = ?", hostname).First(&ativo)
